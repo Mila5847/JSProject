@@ -1,0 +1,66 @@
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #FEE0D1;
+    overflow-x: hidden;
+ }
+ h1{
+    color: blueviolet;
+ }
+ h3, h5{
+    font-style:oblique;
+    text-align: center;
+    color: #A533FF;
+ }
+ header{
+    background-color: #D0BDEC;
+ }
+ nav{
+    margin-bottom: 20px;
+ }
+ div{
+    overflow-x: hidden;
+    
+ }
+ #title{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+ }
+ .column {
+    flex: 50%;
+    padding: 5px;
+    width: 50%;
+    padding: 10px;
+    clear: both;
+ }
+
+.row {
+    margin: auto;
+    width: 60%;
+    padding-top: 30px;
+   }
+.jewelry:hover{
+    filter:opacity(0.8);
+} 
+.rowBracelets {
+    display: flex;
+    padding: 10px;
+    margin-left: 50px;
+}
+
+.columnBracelets {
+    flex: 33.33%;
+}
+.collapsed { display: none }
+.bracelets{
+    width:400px;
+    text-align:center;
+    display:block;
+    background-color: transparent;
+    border: 1px solid transparent;
+    margin-right: 10px;
+    margin-bottom: 1px;
+    float:left;
+  }
