@@ -64,3 +64,8 @@ body{
     margin-bottom: 1px;
     float:left;
   }
+  footer{
+     text-align: center;
+     background-color: black; 
+     color: white;
+  }
