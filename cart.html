@@ -9,7 +9,7 @@
    <link rel="stylesheet" href="project.css">
 </head>
 
-<body>
+<body onload="loadItems()">
    
     <header>
         <a href="index.html"><img id="title" src="images/title.png"></a>
@@ -40,42 +40,7 @@
         </div>
      </nav>
  
-    <h3>Welcome to our necklace collection!</h3>
-    <h5>To see more information about the necklace, please hover 
-        over the image.</h5>
-    
-    <div class="rowJewelry">
-        <div class="columnJewelry">
-            <div class="braceletsAndNecklaces">
-                <img id="descriptionNecklace1" src="images/neck1.jpg" alt="necklace1" style="width:376px">
-                <br>
-                <p class="collapsed" id="description1">Blablabla.
-                </p>
-                <br>
-                <button id="bracelet1" value="5" type="button" class="btn btn-outline-secondary">Add to Cart</button>
-            </div>
-        </div>
-        <div class="columnJewelry">
-            <div class= "braceletsAndNecklaces">
-                <img id="descriptionNecklace2" src="images/neck2.jpg" alt="necklace2" style="width:376px; height: 376px;">
-                <br>
-                <p class="collapsed" id="description2">Blablabla.
-                </p>
-                <br>
-                <button id="bracelet1" value="5" type="button" class="btn btn-outline-secondary">Add to Cart</button>
-            </div>
-        </div>   
-        <div class="columnJewelry">
-            <div class="braceletsAndNecklaces">
-                <img id="descriptionNecklace3" src="images/neck3.jpg" alt="necklace3" style="width:395px; height:376px">
-                <br>
-                <p class="collapsed" id="description3">Blablabla.
-                </p>
-                <br>
-                <button id="bracelet1" value="5" type="button" class="btn btn-outline-secondary">Add to Cart</button>
-            </div>   
-        </div>
-    </div>
+    <h3>Here are your purchased items!</h3>
 
 <footer>
    <p>Email: angel@paradise.com</p>
@@ -83,6 +48,7 @@
 </footer>
 
 <script src="projectJScript.js"></script>
+
 
  </body>
 </html>

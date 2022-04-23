@@ -50,38 +50,65 @@
            </li>
            </ul>
            <form class="d-flex">
-              <a href="shipping.html" class="ship"><i class="fa fa-shopping-cart" style="font-size:48px;color:pink;"></i></a>
+              <a href="cart.html" class="ship"><i class="fa fa-shopping-cart" style="font-size:48px;color:pink;"></i></a>
            </form>
         </div>
         </div>
-     </nav>
+    </nav>
 
      <h3>Time for Purchasing!</h3>
      <h5>Follow the instruction below to order your purchase.</h5>
 
-     <div class="container mt-3">
+    <div class="container mt-3">
         <h2>Personal information</h2>
-        <form action="/action_page.php">
+        <form>
             <div class="mb-3 mt-3">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
             </div>
-          <div class="mb-3 mt-3">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-          </div>
-          <div class="mb-3">
-            <label for="phone">Phone Number:</label>
-            <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" name="phone">
-          </div>
+            <div class="mb-3 mt-3">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            </div>
+            <div class="mb-3">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" name="phone">
+            </div>
         </form>
-            <input type="radio" id="home" name="atHome" value="homeDeliver">
-          <label for="home">Deliver at Home</label><br>
-          <input type="radio" id="store" name="atStore" value="storeDeliver">
-          <label for="store">Deliver at Local Store</label><br>
-          <button type="button" class="btn btn-outline-secondary">Make purchase</button>
+    </div>    
+    <div class="container mt-3">
+        <h2>Delivery information</h2>
+        <form>
+            <p>
+                <input type="radio" id="homeDeliver" name="deliver" value="homeDeliver" onclick="delivery()"/>Deliver at Home 
+                (Please enter your address information below.)
+                <input type="radio" id="storeDeliver" name="deliver" onclick="delivery()"> Deliver
+                    at Local Store
+           
+            </p>
         </form>
-      </div>
+        <form>
+            <div class="mb-3 mt-3">
+                <label for="street">Street:</label>
+                <input type="text" class="form-control" id="streetName" placeholder="Enter street name" name="street">
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="city">City:</label>
+                <input type="text" class="form-control" id="cityName" placeholder="Enter city name" name="city">
+            </div>
+            <div class="mb-3">
+                <label for="phone">State:</label>
+                <input type="text" class="form-control" id="stateName" placeholder="Enter state name" name="state">
+            </div>
+            <div class="mb-3">
+                <label for="phone">Zip:</label>
+                <input type="text" class="form-control" id="zip" placeholder="Enter zip code" name="zip">
+            </div>
+        </form>
+        <button type="button" class="btn btn-outline-secondary">Make purchase</button>
+    </div>
+
+    <script src="projectJScript.js"></script>
  
  </body>
 </html>
