@@ -5,6 +5,7 @@
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
    <title>Angel</title>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="project.css">
 </head>
 
@@ -12,107 +13,75 @@
     <header>
         <a href="index.html"><img id="title" src="images/title.png"></a>
      </header>
-   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="container-fluid">
-      <a href="index.html"><img src="images/logo.jpg" alt="logo" style="width:40px;" class="rounded-pill"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="bracelets.html">Bracelets</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="necklaces.html">Necklaces</a>
-                </li>  
-                <li class="nav-item">
-                    <a class="nav-link" href="shipping.html">Shipping</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+           <a href="index.html"><img src="images/logo.jpg" alt="logo" style="width:40px;" class="rounded-pill"></a>
+        <div class="collapse navbar-collapse" id="mynavbar">
+           <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                 <a class="nav-link" href="index.html">About Us</a>
+           </li>
+           <li class="nav-item">
+                 <a class="nav-link" href="bracelets.html">Bracelets</a>
+           </li>
+           <li class="nav-item">
+                 <a class="nav-link" href="necklaces.html">Necklaces</a>
+           </li>  
+           <li class="nav-item">
+                 <a class="nav-link" href="shipping.html" style="position: right;">Shipping</a>
+           </li>
+           </ul>
+           <form class="d-flex">
+              <a href="shipping.html" class="ship"><i class="fa fa-shopping-cart" style="font-size:48px;color:pink;"></i></a>
+           </form>
         </div>
-    </div>   
-</nav>
+    </nav>
 
 <h3>Welcome to our bracelet collection!</h3>
 <h5>To see more information about the bracelet, please hover 
     over the image.</h5>
 
-<div class="rowBracelets">
-    <div class="columnBracelets">
-        <div class="bracelets">
-            <img id="descriptionBracelet1" src="images/bracelet1.jpg" alt="bracelet1" style="width:376px">
-            <button type="button" onclick="addToCart">Click Me!</button>
+<div class="rowJewelry">
+    <div class="columnJewelry">
+        <div class="braceletsAndNecklaces">
+            <img id="descriptionBracelet1" src="images/bracelet1.jpg" alt="bracelet1" style="width:366px">
+            <br>
             <p class="collapsed" id="description1">This bracelet is made in Canada. It is made out of recycled materials
                 and it is eco-friendly. It costs only 5$.
             </p>
+            <br>
+            <button id="bracelet1" value="5" type="button" class="btn btn-outline-secondary">Add to Cart</button>
         </div>
     </div>
-    <div class="columnBracelets">
-        <div class="bracelets">
-            <img id="descriptionBracelet2" src="images/bracelet2.jpg" alt="bracelet2" style="width:376px">
+    <div class="columnJewelry">
+        <div class="braceletsAndNecklaces">
+            <img id="descriptionBracelet2" src="images/bracelet2.jpg" alt="bracelet2" style="width:366px">
+            <br>
             <p class="collapsed" id="description2">This bracelet is made in India. It is made
                 out of real silver. It costs only 10$.
             </p>
+            <br>
+            <button id="bracelet2" value="10" type="button" class="btn btn-outline-secondary">Add to Cart</button>
         </div>
     </div>
-    <div class="columnBracelets">
-        <div class="bracelets"></div>
-            <img id="descriptionBracelet3" src="images/bracelet5.jpg" alt="bracelet3" style="width:395px; height:376px">
+    <div class="columnJewelry">
+        <div class="braceletsAndNecklaces">
+            <img id="descriptionBracelet3" src="images/bracelet3.jpg" alt="bracelet3" style="width:366px; height:366px">
+            <br>
             <p class="collapsed" id="description3">This bracelet is made in Spain. It is made out 
                 of real gemstones. It costs 30$.
             </p>
+            <br>
+            <button id="bracelet3" value="30" type="button" class="btn btn-outline-secondary">Add to Cart</button>
         </div>    
     </div>
-  </div>
+</div>
 
   <footer>
       <p>Email: angel@paradise.com</p>
       <p>Phone: 777-666-7677</p>
   </footer>
 
-  <script>
-      //Bracelet 1
-    let displayDescription1 = document.getElementById("descriptionBracelet1");
-    displayDescription1.addEventListener("mouseover", function(){
-    display("description1");
-}, false);
- displayDescription1.addEventListener("mouseout", function(){
-    hide("description1");
- }, false);
-
- // BRacelet 2
- let displayDescription2 = document.getElementById("descriptionBracelet2");
-    displayDescription2.addEventListener("mouseover", function(){
-    display("description2");
-}, false);
- displayDescription2.addEventListener("mouseout", function(){
-    hide("description2");
- }, false);
-
- // Bracelet 3
- let displayDescription3 = document.getElementById("descriptionBracelet3");
-    displayDescription3.addEventListener("mouseover", function(){
-    display("description3");
-}, false);
- displayDescription3.addEventListener("mouseout", function(){
-    hide("description3");
- }, false);
-
- // Functions
- function display(id){
-    let element = document.getElementById(id);
-    element.style.display = "inline";
- }
-
- function hide(id){
-    let element = document.getElementById(id);
-    element.style.display = "none";
- }
-</script>
-
+  <script src="projectJScript.js"></script>
 </body>
 </html>

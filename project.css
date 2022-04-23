@@ -7,7 +7,7 @@ body{
  h1{
     color: blueviolet;
  }
- h3, h5{
+ h3, h4, h5{
     font-style:oblique;
     text-align: center;
     color: #A533FF;
@@ -44,17 +44,20 @@ body{
 .jewelry:hover{
     filter:opacity(0.8);
 } 
-.rowBracelets {
+.ship:hover{
+    filter:saturate(5);
+}
+.rowJewelry {
     display: flex;
     padding: 10px;
     margin-left: 50px;
 }
 
-.columnBracelets {
+.columnJewelry {
     flex: 33.33%;
 }
 .collapsed { display: none }
-.bracelets{
+.braceletsAndNecklaces{
     width:400px;
     text-align:center;
     display:block;

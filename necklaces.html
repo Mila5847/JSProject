@@ -5,6 +5,7 @@
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
    <title>Angel</title>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="stylesheet" href="project.css">
 </head>
 
@@ -14,72 +15,74 @@
         <a href="index.html"><img id="title" src="images/title.png"></a>
      </header>
     
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
-          <a href="index.html"><img src="images/logo.jpg" alt="logo" style="width:40px;" class="rounded-pill"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
+           <a href="index.html"><img src="images/logo.jpg" alt="logo" style="width:40px;" class="rounded-pill"></a>
+        <div class="collapse navbar-collapse" id="mynavbar">
+           <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="bracelets.html">Bracelets</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="necklaces.html">Necklaces</a>
-              </li>  
-              <li class="nav-item">
-                 <a class="nav-link" href="shipping.html">Shipping</a>
-               </li>
-            </ul>
-           </div>
-        </div>   
-    </nav>
+                 <a class="nav-link" href="index.html">About Us</a>
+           </li>
+           <li class="nav-item">
+                 <a class="nav-link" href="bracelets.html">Bracelets</a>
+           </li>
+           <li class="nav-item">
+                 <a class="nav-link" href="necklaces.html">Necklaces</a>
+           </li>  
+           <li class="nav-item">
+                 <a class="nav-link" href="shipping.html" style="position: right;">Shipping</a>
+           </li>
+           </ul>
+           <form class="d-flex">
+              <a href="shipping.html" class="ship"><i class="fa fa-shopping-cart" style="font-size:48px;color:pink;"></i></a>
+           </form>
+        </div>
+        </div>
+     </nav>
  
     <h3>Welcome to our necklace collection!</h3>
     <h5>To see more information about the necklace, please hover 
         over the image.</h5>
     
-    <div class="rowNecklaces">
-        <div class="columnNecklaces">
-            <div class="necklaces">
-               <img id="descriptionNecklace1" src="images/neck1.jpg" alt="necklace1" style="width:376px">
-            <button type="button" onclick="addToCart">Click Me!</button>
-            <p class="collapsed" id="description1">This bracelet is made in Canada. It is made out of recycled materials
-                and it is eco-friendly. It costs only 5$.
-            </p>
+    <div class="rowJewelry">
+        <div class="columnJewelry">
+            <div class="braceletsAndNecklaces">
+                <img id="descriptionNecklace1" src="images/neck1.jpg" alt="necklace1" style="width:376px">
+                <br>
+                <p class="collapsed" id="description1">Blablabla.
+                </p>
+                <br>
+                <button id="bracelet1" value="5" type="button" class="btn btn-outline-secondary">Add to Cart</button>
+            </div>
+        </div>
+        <div class="columnJewelry">
+            <div class= "braceletsAndNecklaces">
+                <img id="descriptionNecklace2" src="images/neck2.jpg" alt="necklace2" style="width:376px; height: 376px;">
+                <br>
+                <p class="collapsed" id="description2">Blablabla.
+                </p>
+                <br>
+                <button id="bracelet1" value="5" type="button" class="btn btn-outline-secondary">Add to Cart</button>
+            </div>
+        </div>   
+        <div class="columnJewelry">
+            <div class="braceletsAndNecklaces">
+                <img id="descriptionNecklace3" src="images/neck3.jpg" alt="necklace3" style="width:395px; height:376px">
+                <br>
+                <p class="collapsed" id="description3">Blablabla.
+                </p>
+                <br>
+                <button id="bracelet1" value="5" type="button" class="btn btn-outline-secondary">Add to Cart</button>
+            </div>   
         </div>
     </div>
-    
-      <div class= "necklaces">
-          <img id="descriptionNecklace2" src="images/neck2.jpg" alt="necklace2" style="width:376px">
-          <p class="collapsed" id="description2">This bracelet is made in India. It is made
-              out of real silver. It costs only 10$.
-          </p>
-      </div>
-  </div>
-  <div class="columnNecklaces">
-   <div class="necklaces"></div>
-       <img id="descriptionNecklace3" src="images/neck3.jpg" alt="necklace3" style="width:395px; height:376px">
-       <p class="collapsed" id="description3">This bracelet is made in Spain. It is made out 
-           of real gemstones. It costs 30$.
-       </p>
-   </div>    
-</div>
-</div>
 
 <footer>
    <p>Email: angel@paradise.com</p>
    <p>Phone: 777-666-7677</p>
 </footer>
 
+<script src="projectJScript.js"></script>
 
-
-
-
- 
  </body>
 </html>
