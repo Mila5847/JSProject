@@ -53,6 +53,109 @@ function addItemToCart(itemName, price){
 }
 
 function loadItems(){
+    let jewelryName = [];
+    let jewelryPrice = [];
+    let jewelryQuantity = [];
+    let bracelet1 = "";
+    let bracelet2 = "";
+    let bracelet3 = "";
+
+    let necklace1 = "";
+    let necklace2 = "";
+    let necklace3 = "";
+
+    if(localStorage.getItem("bracelet1") != null){
+        bracelet1 = localStorage.getItem("bracelet1");
+        let itemInfo = bracelet1.split(";");
+        let itemName = itemInfo[0];
+        jewelryName.push(itemName);
+
+        let itemPrice = itemInfo[1];
+        jewelryPrice.push(itemPrice)
+
+        let itemQuantity = itemInfo[2];
+        jewelryQuantity.push(itemQuantity);
+    }
+
+    if(localStorage.getItem("bracelet2") != null){
+        bracelet2 = localStorage.getItem("bracelet2");
+        let itemInfo = bracelet2.split(";");
+        let itemName = itemInfo[0];
+        jewelryName.push(itemName);
+
+        let itemPrice = itemInfo[1];
+        jewelryPrice.push(itemPrice)
+
+        let itemQuantity = itemInfo[2];
+        jewelryQuantity.push(itemQuantity);
+    }
+
+    if(localStorage.getItem("bracelet3") != null){
+        bracelet3 = localStorage.getItem("bracelet3");
+        let itemInfo = bracelet3.split(";");
+        let itemName = itemInfo[0];
+        jewelryName.push(itemName);
+
+        let itemPrice = itemInfo[1];
+        jewelryPrice.push(itemPrice)
+
+        let itemQuantity = itemInfo[2];
+        jewelryQuantity.push(itemQuantity);
+    }
+
+    if(localStorage.getItem("necklace1") != null){
+        necklace1 = localStorage.getItem("necklace1");
+        let itemInfo = necklace1.split(";");
+        let itemName = itemInfo[0];
+        jewelryName.push(itemName);
+
+        let itemPrice = itemInfo[1];
+        jewelryPrice.push(itemPrice)
+
+        let itemQuantity = itemInfo[2];
+        jewelryQuantity.push(itemQuantity);
+    }
+    
+    if(localStorage.getItem("necklace2") != null){
+        necklace2 = localStorage.getItem("necklace2");
+        let itemInfo = necklace2.split(";");
+        let itemName = itemInfo[0];
+        jewelryName.push(itemName);
+
+        let itemPrice = itemInfo[1];
+        jewelryPrice.push(itemPrice)
+
+        let itemQuantity = itemInfo[2];
+        jewelryQuantity.push(itemQuantity);
+    }    
+
+    if(localStorage.getItem("necklace3") != null){
+        necklace3 = localStorage.getItem("necklace3");
+        let itemInfo = necklace3.split(";");
+        let itemName = itemInfo[0];
+        jewelryName.push(itemName);
+
+        let itemPrice = itemInfo[1];
+        jewelryPrice.push(itemPrice)
+
+        let itemQuantity = itemInfo[2];
+        jewelryQuantity.push(itemQuantity);
+    }
+
+   /* document.write("<table>");
+    document.write(
+      `<tr>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>`
+      );
+
+      for(let i = 0; i < jewelry.length; i++){
+        document.write("<tr><td>" + jewelry[i] + "</td><td>" + jewelryPrice[i] + "</td><td>" + jewelryQuantity[i] + "</td></tr>");
+      }
+
+  document.write("</table>");  */
     
 }
 
@@ -70,8 +173,8 @@ function delivery(){
         state.value = '';
         let zip = document.getElementById("zip"); 
         zip.value = '';
-
     }
+
     else if(document.getElementById('storeDeliver').checked){
     let storeCheckChecked = document.getElementById("storeDeliver");
     let street = document.getElementById("streetName");
@@ -85,7 +188,4 @@ function delivery(){
     }
 }
 
-function homeDeliver(){
-
-}
 
