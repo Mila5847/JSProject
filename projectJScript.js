@@ -38,8 +38,24 @@ function hide(id){
 
 //---------------------------------------------------------------------------------------------------
 
+// Remove item from cart
+function removeItemFromCart(itemName){
+  let existingItem = localStorage.getItem(itemName);
+  let existingItemArrayData = existingItem.split(";");
+  existingItemArrayData[2]--;
+  if(existingItemArrayData[2] == 0){
+    localStorage.removeItem(itemName);
+    document.location.reload(); 
+    return;
+  }
+  let stringData = existingItemArrayData.join(";");
+  localStorage.setItem(itemName, stringData);
+
+  document.location.reload(); 
+}
+
 // Add item to cart
-function addItemToCart(itemName, price){
+function addItemToCart(itemName, price, isCart){
     if(localStorage.getItem(itemName) == null){
         let itemData = itemName + ";" + price + ";" + 1;
         localStorage.setItem(itemName, itemData);
@@ -50,117 +66,88 @@ function addItemToCart(itemName, price){
     existingItemArrayData[2]++;
     let stringData = existingItemArrayData.join(";");
     localStorage.setItem(itemName, stringData);
+
+    if(isCart){
+      document.location.reload();
+    }
+}
+
+function addItemFromLocalStorage(item, itemsArray){
+  if(localStorage.getItem(item) != null){
+    let itemData = {
+      name : "",
+      price: "",
+      quantity: ""
+    };
+      let itemFromLocalStorage = localStorage.getItem(item);
+      let itemInfo = itemFromLocalStorage.split(";");
+      let itemName = itemInfo[0];
+      itemData.name = itemName;
+
+      let itemPrice = itemInfo[1];
+      itemData.price = itemPrice;
+
+      let itemQuantity = itemInfo[2];
+      itemData.quantity = itemQuantity;
+      itemsArray.push(itemData);
+  }
 }
 
 function loadItems(){
-    let jewelryName = [];
-    let jewelryPrice = [];
-    let jewelryQuantity = [];
-    let bracelet1 = "";
-    let bracelet2 = "";
-    let bracelet3 = "";
+  let items = [];
+  let namesOfProducts = ["bracelet1", "bracelet2", "bracelet3", "necklace1", "necklace2", "necklace3"];
+  for(let i = 0; i < namesOfProducts.length; i++){
+    addItemFromLocalStorage(namesOfProducts[i], items);
+  }
+  console.log(items);
 
-    let necklace1 = "";
-    let necklace2 = "";
-    let necklace3 = "";
+  let table = document.getElementById("items");
+  let tableContent = 
+  `<table class="table table-hover"> 
+    <tr>
+      <th>Product Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Edit</th>
+      <th>Price</th>
+    </tr>`;
 
-    if(localStorage.getItem("bracelet1") != null){
-        bracelet1 = localStorage.getItem("bracelet1");
-        let itemInfo = bracelet1.split(";");
-        let itemName = itemInfo[0];
-        jewelryName.push(itemName);
+    let totalprice = 0;
 
-        let itemPrice = itemInfo[1];
-        jewelryPrice.push(itemPrice)
-
-        let itemQuantity = itemInfo[2];
-        jewelryQuantity.push(itemQuantity);
-    }
-
-    if(localStorage.getItem("bracelet2") != null){
-        bracelet2 = localStorage.getItem("bracelet2");
-        let itemInfo = bracelet2.split(";");
-        let itemName = itemInfo[0];
-        jewelryName.push(itemName);
-
-        let itemPrice = itemInfo[1];
-        jewelryPrice.push(itemPrice)
-
-        let itemQuantity = itemInfo[2];
-        jewelryQuantity.push(itemQuantity);
-    }
-
-    if(localStorage.getItem("bracelet3") != null){
-        bracelet3 = localStorage.getItem("bracelet3");
-        let itemInfo = bracelet3.split(";");
-        let itemName = itemInfo[0];
-        jewelryName.push(itemName);
-
-        let itemPrice = itemInfo[1];
-        jewelryPrice.push(itemPrice)
-
-        let itemQuantity = itemInfo[2];
-        jewelryQuantity.push(itemQuantity);
-    }
-
-    if(localStorage.getItem("necklace1") != null){
-        necklace1 = localStorage.getItem("necklace1");
-        let itemInfo = necklace1.split(";");
-        let itemName = itemInfo[0];
-        jewelryName.push(itemName);
-
-        let itemPrice = itemInfo[1];
-        jewelryPrice.push(itemPrice)
-
-        let itemQuantity = itemInfo[2];
-        jewelryQuantity.push(itemQuantity);
-    }
+  for(let i = 0; i < items.length; i++){
     
-    if(localStorage.getItem("necklace2") != null){
-        necklace2 = localStorage.getItem("necklace2");
-        let itemInfo = necklace2.split(";");
-        let itemName = itemInfo[0];
-        jewelryName.push(itemName);
-
-        let itemPrice = itemInfo[1];
-        jewelryPrice.push(itemPrice)
-
-        let itemQuantity = itemInfo[2];
-        jewelryQuantity.push(itemQuantity);
-    }    
-
-    if(localStorage.getItem("necklace3") != null){
-        necklace3 = localStorage.getItem("necklace3");
-        let itemInfo = necklace3.split(";");
-        let itemName = itemInfo[0];
-        jewelryName.push(itemName);
-
-        let itemPrice = itemInfo[1];
-        jewelryPrice.push(itemPrice)
-
-        let itemQuantity = itemInfo[2];
-        jewelryQuantity.push(itemQuantity);
-    }
-
-   /* document.write("<table>");
-    document.write(
-      `<tr>
-        <th>Product Name</th>
-        <th>Quantity</th>
-        <th>Price</th>
-      </tr>`
-      );
-
-      for(let i = 0; i < jewelry.length; i++){
-        document.write("<tr><td>" + jewelry[i] + "</td><td>" + jewelryPrice[i] + "</td><td>" + jewelryQuantity[i] + "</td></tr>");
-      }
-
-  document.write("</table>");  */
+    let buttonAdd = `<button class="btn btn-outline-secondary" onclick="addItemToCart('`+ items[i].name + `',` + items[i].price + `, true)">+</button>`;
+    let buttonRemove = `<button class="btn btn-outline-secondary" onclick="removeItemFromCart('`+ items[i].name + `')">-</button>`;
     
+    console.log(buttonAdd);
+
+    tableContent += "<tr><td>" + items[i].name + "</td><td>" + items[i].quantity + "</td><td>" + items[i].price + "</td><td>" + (items[i].quantity * items[i].price) + "</td><td>" + buttonAdd + buttonRemove + "</td></tr>";
+    totalprice += (items[i].quantity * items[i].price);
+  }
+
+  tableContent += "</table>";
+  table.innerHTML = tableContent; 
+  document.getElementById("totalPrice").innerHTML = totalprice;
 }
 
-
 //---------------------------------------------------------------------------------------------------
+// Personal Information
+function colorForms(){
+  let nameForShipping = document.getElementById("shippingName");
+  nameForShipping.addEventListener("blur", blurColor, false);
+  nameForShipping.addEventListener("focus", focusColor, false);
+
+  let emailForShippin = document.getElementById("shippingEmail");
+
+        
+  function blurColor(){
+    shippingName.style.backgroundColor = "pink";
+  }
+        
+  function focusColor(){
+    shippingName.style.backgroundColor = "violet";
+  }
+}
 
 // Delivery Information
 function delivery(){
