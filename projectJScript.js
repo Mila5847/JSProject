@@ -1,4 +1,4 @@
-//Bracelet/Necklace 1
+/*//Bracelet/Necklace 1
 let displayDescription = document.getElementById("descriptionNecklace1");
 displayDescription.addEventListener("mouseover", function(){
 
@@ -36,7 +36,7 @@ function display(id){
 function hide(id){
   let element = document.getElementById(id);
   element.style.display = "none";
-}
+}*/
 
 //---------------------------------------------------------------------------------------------------
 
@@ -208,15 +208,13 @@ let userInput = document.getElementById("submit");
   userInput.addEventListener("click", submission);
 
   function submission(){
-    window.alert(`SUBMISSION`);
-
     //creating a paragraph
     let par =  document.createElement("p");    
 
     //storing user's name + email
     let storeName =  document.getElementById("shippingName").value; 
-    let storeEmail = document.getElementById("email").value;
-    let storeNum = document.getElementById("phone").value;
+    let storeEmail = document.getElementById("shippingEmail").value;
+    let storeNum = document.getElementById("shippingPhone").value;
     let myBr = document.createElement("br");
 
     
