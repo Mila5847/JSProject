@@ -90,6 +90,7 @@
                 <input type="text" class="form-control" id="zip" placeholder="Enter zip code" name="zip">
             </div>
         </form>
+<<<<<<< Updated upstream
         <button type="button" class="btn btn-outline-secondary" onclick="purchase()">Make purchase</button>
     </div>
     <br>
@@ -99,6 +100,45 @@
      <p>Phone: 777-666-7677</p>
      <p>&copy Angel.com</p>
     </footer>
+=======
+        </div>
+
+    <div class="container mt-3">
+        <h2>Payment Information</h2>
+        <form>
+            <div class="mb-3 mt-3">
+
+                <h3>Enter Your Credit/Debit Card Information Below</h3>
+
+                <label for="CardName">Cardholder Name:</label>
+                <input type="text" class="form-control" id="CardholderName" placeholder="Enter cardholder name" name="Cname">
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="CardNum">Card Number:</label>
+                <input type="text" class="form-control" id="cNumber" placeholder="Enter card number" name="num">
+            </div>
+            <div class="mb-3">
+                <label for="expiration">Expiration (MM/YY):</label>
+                <input type="month" class="form-control" id="expDate" name="exp">
+            </div>
+
+            <div class="mb-3">
+                <label for="securityCode">Security Code:</label>
+                <input type="text" class="form-control" id="securityC" placeholder="Enter security code"name="security">
+            </div>
+          
+            <button type="reset" class="btn btn-outline-secondary">Reset Payment Information</button>
+        </form>          
+    <button type="button" class="btn btn-outline-secondary" id="submit">Make purchase</button>
+    </div>    
+    
+    <div class="container mt-3">
+        <h2>Delivery Address</h2>
+        <div id="displaySummary">
+            
+        </div>
+    </div> 
+>>>>>>> Stashed changes
 
     <script src="projectJScript.js"></script>
  
