@@ -106,12 +106,12 @@ function loadItems(){
     <tr>
       <th>Product Name</th>
       <th>Quantity</th>
-      <th>Price</th>
+      <th>Unit Price</th>
       <th>Edit</th>
       <th>Price</th>
     </tr>`;
 
-    let totalPrice = 0;
+  let totalPrice = 0;
 
   for(let i = 0; i < items.length; i++){
     
@@ -126,31 +126,45 @@ function loadItems(){
 
   tableContent += "</table>";
   table.innerHTML = tableContent; 
-  let priceText = totalprice + " $";
-  document.getElementById("totalPrice").innerHTML = priceText;
+ 
 }
 
 //---------------------------------------------------------------------------------------------------
+
 // Personal Information
 function colorForms(){
   let nameForShipping = document.getElementById("shippingName");
-  nameForShipping.addEventListener("blur", blurColor, false);
-  nameForShipping.addEventListener("focus", focusColor, false);
+  nameForShipping.addEventListener("blur", function (){
+    blurColor("shippingName");
+  }, false);
+  nameForShipping.addEventListener("focus", function (){
+    focusColor("shippingName")
+  }, false);
 
   let emailForShipping = document.getElementById("shippingEmail");
-  emailForShipping.addEventListener("blur", blurColor, false);
-  emailForShipping.addEventListener("focus", focusColor, false);
+  emailForShipping.addEventListener("blur", function (){
+    blurColor("shippingEmail")
+  }, false);
+  emailForShipping.addEventListener("focus", function (){
+    focusColor("shippingEmail")
+  }, false);
 
   let phoneForShipping = document.getElementById("shippingPhone");
-  phoneForShipping.addEventListener("blur", blurColor, false);
-  phoneForShipping.addEventListener("focus", focusColor, false);
+  phoneForShipping.addEventListener("blur", function (){
+    blurColor("shippingPhone")
+  }, false);
+  phoneForShipping.addEventListener("focus", function (){
+    focusColor("shippingPhone")
+  }, false);
         
-  function blurColor(){
-    element.style.backgroundColor = "pink";
+  function blurColor(id){
+    let el = document.getElementById(id);
+    el.style.backgroundColor = "pink";
   }
         
-  function focusColor(){
-    element.style.backgroundColor = "violet";
+  function focusColor(id){
+    let el = document.getElementById(id);
+    el.style.backgroundColor = "violet";
   }
 }
 
@@ -178,6 +192,14 @@ function delivery(){
     let zip = document.getElementById("zip");
     zip.value = "6H7 1E7"
     }
+}
+
+//--------------------------------------------------------------------------------------------------------------------
+
+// Purchase alert
+
+function purchase(){
+  window.alert("Thank you for your purchase! <3");
 }
 
 
