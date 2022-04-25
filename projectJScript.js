@@ -99,7 +99,6 @@ function loadItems(){
   for(let i = 0; i < namesOfProducts.length; i++){
     addItemFromLocalStorage(namesOfProducts[i], items);
   }
-  console.log(items);
 
   let table = document.getElementById("items");
   let tableContent = 
@@ -112,22 +111,23 @@ function loadItems(){
       <th>Price</th>
     </tr>`;
 
-    let totalprice = 0;
+    let totalPrice = 0;
 
   for(let i = 0; i < items.length; i++){
     
     let buttonAdd = `<button class="btn btn-outline-secondary" onclick="addItemToCart('`+ items[i].name + `',` + items[i].price + `, true)">+</button>`;
     let buttonRemove = `<button class="btn btn-outline-secondary" onclick="removeItemFromCart('`+ items[i].name + `')">-</button>`;
     
-    console.log(buttonAdd);
+    tableContent += "<tr><td>" + items[i].name + "</td><td>" + items[i].quantity + "</td><td>" + items[i].price + "</td><td>" + buttonAdd + buttonRemove + "</td><td>" + (items[i].quantity * items[i].price) + " $" + "</td></tr>";
 
-    tableContent += "<tr><td>" + items[i].name + "</td><td>" + items[i].quantity + "</td><td>" + items[i].price + "</td><td>" + (items[i].quantity * items[i].price) + "</td><td>" + buttonAdd + buttonRemove + "</td></tr>";
-    totalprice += (items[i].quantity * items[i].price);
+    totalPrice += (items[i].quantity * items[i].price);
   }
+  tableContent += "<tr><td><b>Total Price</b></td><td></td><td></td><td></td><td>" + totalPrice + " $" + "</td></tr>";
 
   tableContent += "</table>";
   table.innerHTML = tableContent; 
-  document.getElementById("totalPrice").innerHTML = totalprice;
+  let priceText = totalprice + " $";
+  document.getElementById("totalPrice").innerHTML = priceText;
 }
 
 //---------------------------------------------------------------------------------------------------
@@ -137,15 +137,20 @@ function colorForms(){
   nameForShipping.addEventListener("blur", blurColor, false);
   nameForShipping.addEventListener("focus", focusColor, false);
 
-  let emailForShippin = document.getElementById("shippingEmail");
+  let emailForShipping = document.getElementById("shippingEmail");
+  emailForShipping.addEventListener("blur", blurColor, false);
+  emailForShipping.addEventListener("focus", focusColor, false);
 
+  let phoneForShipping = document.getElementById("shippingPhone");
+  phoneForShipping.addEventListener("blur", blurColor, false);
+  phoneForShipping.addEventListener("focus", focusColor, false);
         
   function blurColor(){
-    shippingName.style.backgroundColor = "pink";
+    element.style.backgroundColor = "pink";
   }
         
   function focusColor(){
-    shippingName.style.backgroundColor = "violet";
+    element.style.backgroundColor = "violet";
   }
 }
 
