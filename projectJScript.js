@@ -203,5 +203,59 @@ function delivery(){
 function purchase(){
   window.alert("Thank you for your purchase! <3");
 }
+//Personal + Delivery summary
+let userInput = document.getElementById("submit");
+  userInput.addEventListener("click", submission);
+
+  function submission(){
+    window.alert(`SUBMISSION`);
+
+    //creating a paragraph
+    let par =  document.createElement("p");    
+
+    //storing user's name + email
+    let storeName =  document.getElementById("shippingName").value; 
+    let storeEmail = document.getElementById("email").value;
+    let storeNum = document.getElementById("phone").value;
+    let myBr = document.createElement("br");
+
+    
+
+   if(document.getElementById('homeDeliver').checked){
+
+      let street =  document.getElementById("streetName").value; 
+      let city =  document.getElementById("cityName").value; 
+      let state =  document.getElementById("stateName").value; 
+      let zip =  document.getElementById("zip").value; 
+    let displayThanks = document.createTextNode("Thank you " + storeName + " for your purchase! We will sent a confirmation to your email " +storeEmail +
+     " and to your phone number " +storeNum);
+
+     let displayAddress = document.createTextNode("We will deliver your package at " +street + " , " + city + " , " +state + " , " + zip);
+
+ //adding info to paragraph
+    par.appendChild(displayThanks);
+    par.appendChild(myBr);
+    par.appendChild(displayAddress);
+    
+ //getting the form 
+    let parent=document.getElementById("displaySummary");
+    
+    //adding the paragraph to form
+    parent.appendChild(par);
+}
+/*else if (document.getElementById('storeDeliver').checked){
+      let street = document.getElementById("streetName");
+      street.value = "77 Heaven-Road";
+      let city = document.getElementById("cityName");
+      city.value = "St. Heaven";
+      let state = document.getElementById("stateName");
+      state.value = "Los Angeles";
+      let zip = document.getElementById("zip");
+      zip.value = "6H7 1E7";
+}*/
+
+   
+  }
+
 
 
