@@ -203,21 +203,24 @@ function delivery(){
 function purchase(){
   window.alert("Thank you for your purchase! <3");
 }
+
 //Personal + Delivery summary
 let userInput = document.getElementById("submit");
   userInput.addEventListener("click", submission);
 
   function submission(){
     //creating a paragraph
-    let par =  document.createElement("p");    
+    let par =  document.createElement("h3");    
 
     //storing user's name + email
     let storeName =  document.getElementById("shippingName").value; 
     let storeEmail = document.getElementById("shippingEmail").value;
     let storeNum = document.getElementById("shippingPhone").value;
-    let myBr = document.createElement("br");
+    let storeCard = document.getElementById("CardholderName").value;
+    let storeDate = document.getElementById("expDate").value;
 
-    
+    let myBr = document.createElement("br");
+    let myBr2 = document.createElement("br");
 
    if(document.getElementById('homeDeliver').checked){
 
@@ -225,35 +228,50 @@ let userInput = document.getElementById("submit");
       let city =  document.getElementById("cityName").value; 
       let state =  document.getElementById("stateName").value; 
       let zip =  document.getElementById("zip").value; 
+
     let displayThanks = document.createTextNode("Thank you " + storeName + " for your purchase! We will sent a confirmation to your email " +storeEmail +
-     " and to your phone number " +storeNum);
+     ", and to your phone number " +storeNum);
 
-     let displayAddress = document.createTextNode("We will deliver your package at " +street + " , " + city + " , " +state + " , " + zip);
+    let displayAddress = document.createTextNode("Your package will be delivered at " +street + ", " + city + ", " +state + ", " + zip);
 
- //adding info to paragraph
+    let displayCard = document.createTextNode("The payment will be made with the card with the card holder name: "+storeCard + " which expires on " +storeDate);
+
     par.appendChild(displayThanks);
     par.appendChild(myBr);
     par.appendChild(displayAddress);
+    par.appendChild(myBr2);
+    par.appendChild(displayCard);
     
- //getting the form 
+    
     let parent=document.getElementById("displaySummary");
-    
-    //adding the paragraph to form
     parent.appendChild(par);
+ 
 }
-/*else if (document.getElementById('storeDeliver').checked){
-      let street = document.getElementById("streetName");
-      street.value = "77 Heaven-Road";
-      let city = document.getElementById("cityName");
-      city.value = "St. Heaven";
-      let state = document.getElementById("stateName");
-      state.value = "Los Angeles";
-      let zip = document.getElementById("zip");
-      zip.value = "6H7 1E7";
-}*/
+//if the store delivery is checked
+else if (document.getElementById('storeDeliver').checked){
+      let street = "77 Heaven-Road";
+      let city = "St. Heaven";
+      let state = "Los Angeles";
+      let zip = "6H7 1E7";
 
+      let displayThanks = document.createTextNode("Thank you " + storeName + " for your purchase! We will sent a confirmation to your email " +storeEmail +
+      ", and to your phone number " +storeNum);
+ 
+      let displayAddress = document.createTextNode("We will have your package ready for pick-up at our store on " +street + ", " + city + ", " +state + ", " + zip);
+ 
+      let displayCard = document.createTextNode("The payment will be made with the card with the card holder name: "+storeCard + " which expires on " +storeDate);
+  
+    par.appendChild(displayThanks);
+    par.appendChild(myBr);
+    par.appendChild(displayAddress);
+    par.appendChild(myBr2);
+    par.appendChild(displayCard);
+    
+    let parent=document.getElementById("displaySummary");
+    parent.appendChild(par);
    
-  }
+} 
+    }
 
 
 
