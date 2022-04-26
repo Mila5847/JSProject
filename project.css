@@ -73,3 +73,6 @@ body{
      color: white;
      position:sticky;
   }
+  .btn{
+      margin: 10px;
+  }
