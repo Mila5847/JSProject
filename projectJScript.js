@@ -1,45 +1,3 @@
-/*//Bracelet/Necklace 1
-let displayDescription = document.getElementById("descriptionNecklace1");
-displayDescription.addEventListener("mouseover", function(){
-
-display("description1");
-
-}, false);
-displayDescription[0].addEventListener("mouseout", function(){
-hide("description1");
-}, false);
-
-// Bracelet/Necklace 2
-
-  displayDescription[1].addEventListener("mouseover", function(){
-  display("description2");
-}, false);
-displayDescription[1].addEventListener("mouseout", function(){
-  hide("description2");
-}, false);
-
-// Bracelet/Necklace 3
-
-  displayDescription[2].addEventListener("mouseover", function(){
-  display("description3");
-}, false);
-displayDescription[2].addEventListener("mouseout", function(){
-  hide("description3");
-}, false);
-
-// Functions for Bracelets/Necklces
-function display(id){
-  let element = document.getElementById(id);
-  element.style.display = "inline";
-}
-
-function hide(id){
-  let element = document.getElementById(id);
-  element.style.display = "none";
-}*/
-
-//---------------------------------------------------------------------------------------------------
-
 // Remove item from cart
 function removeItemFromCart(itemName){
   let existingItem = localStorage.getItem(itemName);
@@ -129,6 +87,12 @@ function loadItems(){
   tableContent += "</table>";
   table.innerHTML = tableContent; 
  
+}
+
+// Remove everything from cart
+function discardPurchase(){
+  let clearLocalStorage = localStorage.clear()
+  document.location.reload();
 }
 
 //---------------------------------------------------------------------------------------------------
