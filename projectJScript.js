@@ -185,7 +185,9 @@ let userInput = document.getElementById("submit");
 
     let myBr = document.createElement("br");
     let myBr2 = document.createElement("br");
-
+    let myBr3 = document.createElement("br");
+    let btn = document.createElement("button");
+  
    if(document.getElementById('homeDeliver').checked){
 
       let street =  document.getElementById("streetName").value; 
@@ -200,16 +202,29 @@ let userInput = document.getElementById("submit");
 
     let displayCard = document.createTextNode("The payment will be made with the card with the card holder name: "+storeCard + " which expires on " +storeDate);
 
+    btn.innerHTML="Cancel Order";
+    btn.id="cancelOrder";
+    
     par.appendChild(displayThanks);
     par.appendChild(myBr);
     par.appendChild(displayAddress);
-    par.appendChild(myBr2);
+    par.appendChild(myBr2); 
     par.appendChild(displayCard);
+    par.appendChild(myBr3);
+    par.appendChild(btn);
     
     
     let parent=document.getElementById("displaySummary");
     parent.appendChild(par);
- 
+    //create a cancel button to clear the nodes
+  btn.addEventListener("click", function(){
+    
+    let element = document.getElementById("displaySummary");
+      while(element.hasChildNodes()){
+        element.removeChild(element.firstChild); 
+      }
+  window.alert("Your order will be cancelled. Press 'OK' to continue");
+  });
 }
 //if the store delivery is checked
 else if (document.getElementById('storeDeliver').checked){
@@ -225,17 +240,36 @@ else if (document.getElementById('storeDeliver').checked){
  
       let displayCard = document.createTextNode("The payment will be made with the card with the card holder name: "+storeCard + " which expires on " +storeDate);
   
-    par.appendChild(displayThanks);
-    par.appendChild(myBr);
-    par.appendChild(displayAddress);
-    par.appendChild(myBr2);
-    par.appendChild(displayCard);
+      btn.innerHTML="Cancel Order";
+      btn.id="cancelOrder";
+      
+      par.appendChild(displayThanks);
+      par.appendChild(myBr);
+      par.appendChild(displayAddress);
+      par.appendChild(myBr2); 
+      par.appendChild(displayCard);
+      par.appendChild(myBr3);
+      par.appendChild(btn);
+      
+      
+      let parent=document.getElementById("displaySummary");
+      parent.appendChild(par);
+      //create a cancel button to clear the nodes
+    btn.addEventListener("click", function(){
+      
+      let element = document.getElementById("displaySummary");
+        while(element.hasChildNodes()){
+          element.removeChild(element.firstChild); 
+        }
+    window.alert("Your order will be cancelled. Press 'OK' to continue");
+    });
+
+
+}  
+  } 
     
-    let parent=document.getElementById("displaySummary");
-    parent.appendChild(par);
+
    
-} 
-    }
 
 
 
