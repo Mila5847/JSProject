@@ -263,8 +263,6 @@ else if (document.getElementById('storeDeliver').checked){
         }
     window.alert("Your order will be cancelled. Press 'OK' to continue");
     });
-
-
 }  
   } 
     
