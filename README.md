@@ -43,7 +43,6 @@ the welcome page (About us), the bracelets page, the necklaces page, the shippin
 - The client can view the total cost of their purchase, and add or remove items.
 - The client can choose if the purchase should be delivered to an address or the local store.
 - The client can cancel the order.
-<a name="improvements"></a>
 
 <a name="challenges"></a>
 ## Challenges
