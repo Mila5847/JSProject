@@ -7,7 +7,6 @@ go to the checkout and "pay" for the purchase.
 
 ## Table of Contents
 - [Project Description](#project-description)
-- [Installation](#installation)
 - [Features](#features)
 - [Challenges](#challenges)
 - [Future Improvements Ideas](#improvements)
@@ -143,12 +142,13 @@ function loadItems(){
   table.innerHTML = tableContent; 
 }
 ```
+<a name="improvements"></a>
 ## Future Improvements Ideas
-- Authentication (username, password), log-in/sign-in page could be implemented so the client's information is secured and the website is only 
-accessed by authorized people.
+- Authentication (username, password), log-in/sign-in page could be implemented so the client's information is secured and the website is only accessed by authorized people.
 - Credit/Debit card validation could be implemented to ensure the card's validity.
 - The design could be improved to make the website more modern and clean-looking.
 - More items could be added to the shop's inventory.
+
 <a name="acknowledgments"></a>
 ## Acknowledgments 
 I would like to thank my brother, Petar Kehayov, for helping me with the challenge mentioned above. 
